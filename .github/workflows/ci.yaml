@@ -1,0 +1,92 @@
+---
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Use to set tag, default: rolling"
+        type: string
+        default: "rolling"
+        required: false
+      dry-run:
+        description: "Do not push image"
+        type: boolean
+        default: false
+        required: false
+      latest:
+        description: "Tag latest"
+        type: boolean
+        default: false
+        required: false
+  workflow_call:
+    inputs:
+      tag:
+        description: "Use to set tag, default: rolling"
+        type: string
+        default: "rolling"
+        required: false
+      dry-run:
+        description: "Do not push image"
+        type: boolean
+        default: false
+        required: false
+      latest:
+        description: "Tag latest"
+        type: boolean
+        default: false
+        required: false
+  push:
+    branches: ["main"]
+    paths:
+      - "go.mod"
+      - "go.sum"
+      - "*.go"
+      - "**/*.go"
+  pull_request:
+    branches: ["main"]
+  merge_group:
+    branches: ["main"]
+
+jobs:
+  lint:
+    uses: heathcliff26/ci/.github/workflows/golang-lint.yaml@main
+    permissions:
+      contents: read
+
+  gosec:
+    uses: heathcliff26/ci/.github/workflows/golang-gosec.yaml@main
+    permissions:
+      contents: read
+      security-events: write
+
+  validate:
+    uses: heathcliff26/ci/.github/workflows/golang-build.yaml@main
+    permissions:
+      contents: read
+    with:
+      cache: false
+      cmd: "make validate"
+
+  build-binary:
+    uses: heathcliff26/ci/.github/workflows/golang-build.yaml@main
+    permissions:
+      contents: read
+    needs:
+      - lint
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: linux
+            arch: amd64
+          - os: linux
+            arch: arm64
+    with:
+      release: "${{ github.event_name == 'pull_request' && 'devel' || inputs.tag == '' && 'rolling' || inputs.tag }}"
+      goos: "${{ matrix.os }}"
+      goarch: "${{ matrix.arch }}"
+      artifact: "bin/pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}*"
+      artifact-name: "pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}"
+      cmd: "hack/build.sh pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}"
+    secrets: inherit

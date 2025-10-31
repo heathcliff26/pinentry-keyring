@@ -1,0 +1,7 @@
+# Ignore binaries
+/bin
+
+# Packit RPM builds
+/tmp
+/x86_64
+/aarch64

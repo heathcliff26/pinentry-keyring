@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+    <id>io.github.heathcliff26.pinentry-keyring</id>
+
+    <name>pinentry-keyring</name>
+    <summary>Wrapper around pinentry to fix gpg-agent</summary>
+
+    <metadata_license>MIT</metadata_license>
+    <project_license>Apache-2.0</project_license>
+
+    <description>
+        <p>
+            Lightweight wrapper around pinentry to ensure gpg shows the option to save the
+            passphrase to gnome keyring.
+        </p>
+    </description>
+
+    <url type="homepage">https://github.com/heathcliff26/pinentry-keyring</url>
+    <developer id="io.github.heathcliff26">
+        <name>Heathcliff</name>
+    </developer>
+
+    <categories>
+        <category>Network</category>
+        <category>FileTransfer</category>
+    </categories>
+
+    <provides>
+        <binary>pinentry-keyring</binary>
+    </provides>
+</component>
