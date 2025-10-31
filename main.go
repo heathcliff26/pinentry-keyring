@@ -12,6 +12,7 @@ func createPinentryCMD() *exec.Cmd {
 	if pinentryPath == "" {
 		pinentryPath = "pinentry"
 	}
+	// #nosec G204: Path is controlled by user environment
 	return exec.Command(pinentryPath, os.Args[1:]...)
 
 }
