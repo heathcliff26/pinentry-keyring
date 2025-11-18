@@ -54,3 +54,5 @@ jobs:
       release-artifacts: "release/*"
       artifacts: "pinentry-keyring-*"
       prerelease: ${{ inputs.prerelease }}
+    secrets: inherit
+
