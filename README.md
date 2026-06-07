@@ -1,6 +1,5 @@
 [![CI](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/ci.yaml/badge.svg?event=push)](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/ci.yaml)
 [![Editorconfig Check](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/editorconfig-check.yaml/badge.svg?event=push)](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/editorconfig-check.yaml)
-[![Renovate](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/renovate.yaml/badge.svg)](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/renovate.yaml)
 
 # pinentry-keyring
 
