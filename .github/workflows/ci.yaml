@@ -25,6 +25,13 @@ on:
       - "**/*.go"
   pull_request:
     branches: ["main"]
+    paths:
+      - "go.mod"
+      - "go.sum"
+      - "*.go"
+      - "**/*.go"
+      - ".github/workflows/ci.yaml"
+      - "hack/*.sh"
   merge_group:
     branches: ["main"]
 
