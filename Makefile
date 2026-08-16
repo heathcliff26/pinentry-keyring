@@ -4,6 +4,10 @@ SHELL := bash
 build:
 	hack/build.sh
 
+# Build all artifacts used for release
+release:
+	hack/release.sh
+
 # Run unit-tests
 test:
 	go test -v -coverprofile=coverprofile.out .
@@ -59,6 +63,7 @@ help:
 
 .PHONY: \
 	build \
+	release \
 	test \
 	update-deps \
 	lint \
