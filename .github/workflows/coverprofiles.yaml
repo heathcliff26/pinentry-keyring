@@ -5,6 +5,11 @@ on:
   workflow_dispatch:
   push:
     branches: ["main"]
+    paths:
+      - "go.mod"
+      - "go.sum"
+      - "*.go"
+      - "**/*.go"
 
 jobs:
   generate-reports:
