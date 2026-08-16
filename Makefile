@@ -1,12 +1,12 @@
 SHELL := bash
 
-REPOSITORY ?= localhost
-CONTAINER_NAME ?= pinentry-keyring
-TAG ?= latest
-
 # Build the binary
 build:
 	hack/build.sh
+
+# Run unit-tests
+test:
+	go test -v -coverprofile=coverprofile.out .
 
 # Update dependencies
 update-deps:
@@ -27,6 +27,10 @@ validate:
 # Validate the appstream metainfo file
 validate-metainfo:
 	appstreamcli validate io.github.heathcliff26.pinentry-keyring.metainfo.xml
+
+# Generate cover profile
+coverprofile:
+	hack/coverprofile.sh
 
 # Scan code for vulnerabilities using gosec
 gosec:
@@ -54,13 +58,14 @@ help:
 	@echo "Run 'make <target>' to execute a specific target."
 
 .PHONY: \
-	default \
 	build \
+	test \
 	update-deps \
 	lint \
 	fmt \
 	validate \
 	validate-metainfo \
+	coverprofile \
 	gosec \
 	packit \
 	packit-mock \

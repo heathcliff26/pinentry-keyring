@@ -1,4 +1,5 @@
 [![CI](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/ci.yaml/badge.svg?event=push)](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/ci.yaml)
+[![Coverage Status](https://coveralls.io/repos/github/heathcliff26/pinentry-keyring/badge.svg)](https://coveralls.io/github/heathcliff26/pinentry-keyring)
 [![Editorconfig Check](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/editorconfig-check.yaml/badge.svg?event=push)](https://github.com/heathcliff26/pinentry-keyring/actions/workflows/editorconfig-check.yaml)
 
 # pinentry-keyring
