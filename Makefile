@@ -18,7 +18,7 @@ lint:
 
 # Format code
 fmt:
-	gofmt -s -w .
+	gofmt -s -w *.go testdata
 
 # Validate that all generated files are up to date
 validate:
