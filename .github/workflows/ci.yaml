@@ -66,19 +66,9 @@ jobs:
     uses: heathcliff26/ci/.github/workflows/golang-build.yaml@main
     permissions:
       contents: read
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - os: linux
-            arch: amd64
-          - os: linux
-            arch: arm64
     with:
       release: "${{ github.event_name == 'pull_request' && 'devel' || inputs.tag == '' && 'rolling' || inputs.tag }}"
-      goos: "${{ matrix.os }}"
-      goarch: "${{ matrix.arch }}"
-      artifact: "bin/pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}*"
-      artifact-name: "pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}"
-      cmd: "hack/build.sh pinentry-keyring-${{ matrix.os }}-${{ matrix.arch }}"
+      artifact: "dist/pinentry-keyring*"
+      artifact-name: "pinentry-keyring"
+      cmd: "make release"
     secrets: inherit
