@@ -30,13 +30,23 @@ sudo dnf install pinentry-keyring
 ## Configure gpg-agent
 
 Edit the `gpg-agent.conf` and point to the pinenty-keyring binary:
-```
+```bash
 vim ~/.gnupg/gpg-agent.conf
 ```
 Add the line:
-```
+```bash
 pinentry-program /usr/bin/pinentry-keyring
 ```
+
+### Fix for KDE
+
+Under KDE, it might be necessary to set `PINENTRY_KDE_USE_WALLET=1` in the environment.
+
+To do this, create `$HOME/.config/plasma-workspace/env/pinentry-kde-fix.sh` with:
+```bash
+export PINENTRY_KDE_USE_WALLET=1
+```
+The script does not need executable permissions, KDE will automatically source it.
 
 ## How does it work
 
