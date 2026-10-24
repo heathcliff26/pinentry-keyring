@@ -1,6 +1,6 @@
 # Changelog
 
-Version v1.1.0-rc.0
+Version v1.1.0
 --------------------
 Released: 2026-10-24
 
@@ -15,6 +15,7 @@ Released: 2026-10-24
 - Synced file(s) with heathcliff26/ci
 - Add new changelog workflow
 - *(release)* Push packages to gemfury
+- *(release)* Update changelog for v1.1.0-rc.0
 
 💼 Other:
 - Fix coverprofiles permissions

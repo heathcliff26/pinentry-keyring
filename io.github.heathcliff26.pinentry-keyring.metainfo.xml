@@ -23,7 +23,7 @@
     <binary>pinentry-keyring</binary>
   </provides>
   <releases>
-    <release type="stable" version="v1.1.0-rc.0" date="2026-10-24T00:00:00Z">
+    <release type="stable" version="v1.1.0" date="2026-10-24T00:00:00Z">
       <description>
         <p>This release adds the following feature:</p>
         <ul>
@@ -37,6 +37,7 @@
           <li>Synced file(s) with heathcliff26/ci</li>
           <li>Add new changelog workflow</li>
           <li>*(release)* Push packages to gemfury</li>
+          <li>*(release)* Update changelog for v1.1.0-rc.0</li>
           <li>💼 Other:</li>
           <li>Fix coverprofiles permissions</li>
         </ul>
