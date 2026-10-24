@@ -23,6 +23,32 @@ builds:
 
 archives:
   - formats: ["binary"]
+nfpms:
+  - id: linux
+    package_name: "{{ .ProjectName }}"
+    file_name_template: "{{ .PackageName }}-linux-{{ .Arch }}"
+    maintainer: Heathcliff <heathcliff@heathcliff.eu>
+    description: |
+      Lightweight wrapper around pinentry to ensure gpg shows the option to save the passphrase to gnome keyring.
+    license: Apache-2.0
+    homepage: https://github.com/heathcliff26/{{ .ProjectName }}
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
+    contents:
+      - dst: /usr/share/licenses/{{ .PackageName }}
+        type: dir
+      - dst: /usr/share/doc/{{ .PackageName }}
+        type: dir
+      - src: LICENSE
+        dst: /usr/share/licenses/{{ .PackageName }}/LICENSE
+      - src: README.md
+        dst: /usr/share/doc/{{ .PackageName }}/README.md
+      - src: io.github.heathcliff26.{{ .PackageName }}.metainfo.xml
+        dst: /usr/share/metainfo/io.github.heathcliff26.{{ .PackageName }}.metainfo.xml
+    rpm:
+      summary: Wrapper around pinentry to fix gpg-agent
 
 changelog:
   disable: true

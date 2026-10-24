@@ -68,7 +68,7 @@ jobs:
       contents: read
     with:
       release: "${{ github.event_name == 'pull_request' && 'devel' || inputs.tag == '' && 'rolling' || inputs.tag }}"
-      artifact: "dist/pinentry-keyring*"
+      artifact: "dist/*"
       artifact-name: "pinentry-keyring"
       cmd: "make release"
     secrets: inherit
