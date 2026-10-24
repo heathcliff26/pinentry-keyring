@@ -1,31 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <component type="console-application">
-    <id>io.github.heathcliff26.pinentry-keyring</id>
-
-    <name>pinentry-keyring</name>
-    <summary>Wrapper around pinentry to fix gpg-agent</summary>
-
-    <metadata_license>MIT</metadata_license>
-    <project_license>Apache-2.0</project_license>
-
-    <description>
-        <p>
+  <id>io.github.heathcliff26.pinentry-keyring</id>
+  <name>pinentry-keyring</name>
+  <summary>Wrapper around pinentry to fix gpg-agent</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <description>
+    <p>
             Lightweight wrapper around pinentry to ensure gpg shows the option to save the
             passphrase to gnome keyring.
         </p>
-    </description>
-
-    <url type="homepage">https://github.com/heathcliff26/pinentry-keyring</url>
-    <developer id="io.github.heathcliff26">
-        <name>Heathcliff</name>
-    </developer>
-
-    <categories>
-        <category>Network</category>
-        <category>FileTransfer</category>
-    </categories>
-
-    <provides>
-        <binary>pinentry-keyring</binary>
-    </provides>
+  </description>
+  <developer id="io.github.heathcliff26">
+    <name>Heathcliff</name>
+  </developer>
+  <url type="homepage">https://github.com/heathcliff26/pinentry-keyring</url>
+  <categories>
+    <category>Network</category>
+    <category>FileTransfer</category>
+  </categories>
+  <provides>
+    <binary>pinentry-keyring</binary>
+  </provides>
+  <releases>
+    <release type="stable" version="v1.1.0-rc.0" date="2026-10-24T00:00:00Z">
+      <description>
+        <p>This release adds the following feature:</p>
+        <ul>
+          <li>Use goreleaser to build rpm package</li>
+        </ul>
+        <p>This release updates documentation:</p>
+        <ul>
+          <li>Add potential fix for KDE sessions</li>
+          <li>⚙️ Miscellaneous Tasks:</li>
+          <li>Synced file(s) with heathcliff26/ci</li>
+          <li>Synced file(s) with heathcliff26/ci</li>
+          <li>Add new changelog workflow</li>
+          <li>*(release)* Push packages to gemfury</li>
+          <li>💼 Other:</li>
+          <li>Fix coverprofiles permissions</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="v1.0.1" date="2026-09-12T00:00:00Z">
+      <description>
+        <p>🐛 Bug Fixes:</p>
+        <p>*(deps)* Update module github.com/stretchr/testify to v1.12.1</p>
+        <p>💼 Other:</p>
+        <p>Build with latest golang</p>
+      </description>
+    </release>
+    <release type="stable" version="v1.0.0" date="2026-08-16T00:00:00Z">
+      <description>
+        <p>💼 Other:</p>
+        <p>Move renovate and Link Check to tekton</p>
+        <p>Remove obsolete Renovate status badge</p>
+        <p>Only run coverprofiles when needed</p>
+        <p>Use goreleaser to build release artifacts</p>
+      </description>
+    </release>
+    <release type="stable" version="v0.0.3" date="2026-03-22T00:00:00Z">
+      <description>
+        <p>💼 Other:</p>
+        <p>Remove unneeded prepare step in renovate workflow</p>
+      </description>
+    </release>
+    <release type="stable" version="v0.0.2" date="2026-01-04T00:00:00Z">
+      <description>
+        <p>💼 Other:</p>
+        <p>Remove unneded inputs</p>
+        <p>Enable signing artifacts in release workflow</p>
+      </description>
+    </release>
+  </releases>
 </component>
